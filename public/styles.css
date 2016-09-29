@@ -1,0 +1,18 @@
+#spacer{
+	height: 20px;
+}
+body{
+	line-height: 1;
+	background: #403B6A; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(0,0,0,0.3), rgba(50,100,200,0.1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0,0,0,0.3), rgba(50,100,200,0.1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0,0,0,0.3), rgba(50,100,200,0.1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(50,100,200,0.1)); /* Standard syntax */
+    background-attachment: fixed
+}
+header{
+	text-align: center;
+}
+#listHead{
+	text-align: center;
+}

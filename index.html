@@ -1,0 +1,64 @@
+<html !DOCTYPE html>
+<html ng-app="phpToDoApp">
+<head>
+	<title>PHP To Do Application</title>
+	<link rel="stylesheet" type="text/css" href="./public/styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js">
+</head>
+<body ng-controller="mainCtrl" ng-init="getTasks()">
+
+<header> 
+	<h1>What do you want to do today?</h1>
+</header>
+<div id="spacer"></div>
+<div class="container">
+	<div class="form-group">
+		<form ng-submit="addTask(newTask)">
+			<br>
+			<input class="form-control" type="text" name="addtask" value = "" ng-model = "newTask">
+			<input type="submit" name="addtask" value="Add a Task">
+		</form>
+
+	</div>
+	<div>
+		<div id="spacer"></div>
+			<div id="listHead">
+				<h2>Things you have to accomplish today:</h2>
+				<p>Double click an item to edit</p>
+			</div>
+		<div ng-cloak class="container-fluid" ng-repeat="task in items">
+			<h4 ng-dblclick="focused = true">{{task.task}}, date added: {{task.date}} 
+			<button  ng-click="deleteTask(task.id)">Finished</button>
+			<form ng-submit="updateTask(task.id, task.task)">
+				<input ng-show="focused" type="text" name="update" ng-model="task.task">
+				<input ng-show="focused" type="submit" name="update" value="Update">
+			</form>
+			</h4>	
+		</div>	
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+		<script src = './public/app.js'></script>
+		<script src = './public/mainCtrl.js'></script>
+		<script src = './public/mainServ.js'></script> 
+
+
+</body>
+</html>
